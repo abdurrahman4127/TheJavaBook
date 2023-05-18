@@ -1,6 +1,6 @@
 # JavaBook
 
-yeah, well, there goes nothing! but, this repo contains a bunch of java code snippets and examples covering topics like ```threading```, ```networking```, ```interfacing```, ```hasing```, ```mapping```, ```fileI/O```, ```anonymous class```, ```static/final keyword```, ```event handling```, ```GUI```, ```abstraction```, ```collection```, and many more. 
+yeah, well, there goes nothing! but, this repo contains a bunch of java code snippets and examples that i had written in my 1st-2nd year in university life - covering topics like ```threading```, ```networking```, ```interfacing```, ```event handling```, ```GUI```, ```mapping```, ```fileI/O```, ```anonymous class```, ```nested class```, ```static/final keyword```, ```hasing```, ```abstraction```, ```collection```, ```exception```, and many more. it should be enough to get started with. 
 
 ## Table of Contents
 
