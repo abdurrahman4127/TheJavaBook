@@ -1,0 +1,13 @@
+Consider a scenario where a restaurant handovers prepared foods for orders placed by the delivery man.
+ At first a delivery man can place orders, until the number of pending orders reaches a maximum value.
+  Beyond that value the delivery man has to wait for the pending orders to be cooked.
+  After the number of pending orders fall below the maximum value, the delivery man can start placing orders.
+  However, the number of pending orders needs to be above a certain minimum value for the cook to start cooking.
+  So, a delivery man can place orders at any time unless the number of pending orders reaches a maximum value.
+   Cook can cook for orders always after the number of pending orders crosses a minimum value.
+   You have two delivery men and one cook threads.
+   Model the Cook and each of the delivery men as different threads
+   and implement the scenario with proper synchronization using wait() and notify().
+   You cannot use ArrayBlockingQueue or other similar thread safe advanced data structures.
+   Your program must not stop and run infinitely.
+    Every thread must print a line in the console once it performs some activity.

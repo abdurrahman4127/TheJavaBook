@@ -1,0 +1,108 @@
+import java.util.*;
+
+class Utils {
+    static Random random = new Random();
+
+    static void sleedRandomMS(int upper_bound) {
+        try {
+            Thread.sleep(random.nextInt(100));
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+class Restaurant {
+    int nOrders = 0;
+    int MAX_ORDERS;
+    int MIN_ORDERS;
+
+    void put_order(String name) {
+        ++nOrders;
+        System.out.println(name + "-> " + "placed a new order, #Total-Pending-Orders: " + nOrders);
+    }
+
+    void cook_order(String name) {
+        --nOrders;
+        System.out.println(name + "-> " + "cooked for an order, #Total-Pending-Orders: " + nOrders);
+    }
+}
+
+class Cook extends Restaurant implements Runnable {
+    String name;
+    Restaurant restaurant;
+
+    Cook(String name, Restaurant restaurant) {
+//        super(name);
+        this.name = name;
+        this.restaurant = restaurant;
+        run();
+    }
+
+    int maxOrder = MAX_ORDERS;
+    int minOrder = MIN_ORDERS;
+
+    @Override
+    public void run() {
+        synchronized (this.name) {
+            System.out.println("Starting of " + Thread.currentThread().getName());
+            try {
+                while (maxOrder >= minOrder) {
+                    restaurant.cook_order(name);
+                    Utils.sleedRandomMS(80);
+                    wait();
+                }
+            } catch(Exception g){
+                    //
+                }
+            }
+        }
+    }
+
+class DeliveryMan extends Thread {
+    String name;
+    Restaurant restaurant;
+
+    DeliveryMan(String name, Restaurant restaurant) {
+        super(name);
+        this.name = name;
+        this.restaurant = restaurant;
+        start();
+    }
+
+    @Override
+    public void run() {
+        while (true) {
+            restaurant.put_order(name);
+            Utils.sleedRandomMS(100);
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args)
+    {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter Max #Orders Placeable: ");
+        int max_no_placed_orders = scanner.nextInt(); // 100
+
+        System.out.println("Enter Min #Placed Orders to start Cooking: ");
+        int min_no_placed_orders_to_cook = scanner.nextInt(); // 10
+
+        Restaurant restaurant = new Restaurant();
+        restaurant.MAX_ORDERS = max_no_placed_orders;
+        restaurant.MIN_ORDERS = min_no_placed_orders_to_cook;
+
+        new Cook("Cook.1", restaurant);
+
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        new DeliveryMan("Del. Man.1", restaurant);
+        new DeliveryMan("Del. Man.2", restaurant);
+    }
+}

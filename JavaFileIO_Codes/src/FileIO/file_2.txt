@@ -1,0 +1,10 @@
+from this file, we'll be extracting integers.
+for instance, 1 , 2 , 3 ; these kinda numbers.
+but my favourite number is 7 , so I'll extract it as well.
+
+note : we need to keep the integer separately otherwise compiler won't
+understand which one is can be converted to integers.
+for instance :
+  CR7, compiler won't be able to understand if it's a string or has any numeric value.
+  if you give CR 7 , then it's acceptable
+  if you give CR7 , then it's unacceptable
