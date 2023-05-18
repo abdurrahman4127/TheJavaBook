@@ -27,3 +27,6 @@ yeah, well, there goes nothing! but, this repo contains a bunch of java code sni
 - [VariableAndTypeCasting](VariableAndTypeCasting/src/)
 
 Feel free to explore each folder to find code examples and explanations for various Java concepts.
+
+## Contribution
+If you would like to contribute to this repository by adding or modifying files, feel free to submit a pull request. Contributions are welcome and encouraged!
