@@ -4,7 +4,7 @@ Welcome to the JavaBook repository! This repository contains a collection of Jav
 
 ## Table of Contents
 
-- [ClassObjectCodes](ClassObjectCodes/README.md)
+- [ClassObjectCodes](ClassObjectCodes/)
 - [JavaAbstractionCodes](JavaAbstractionCodes/README.md)
 - [JavaCollectionCodes](JavaCollectionCodes/README.md)
 - [JavaConstructorPublicPrivateCodes](JavaConstructorPublicPrivateCodes/README.md)
